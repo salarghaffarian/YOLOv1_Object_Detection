@@ -15,11 +15,11 @@ class YoloLoss(nn.Module):
     def forward(self, predictions, target):
         predictions = predictions.reshape(-1, self.S, self.S, self.C + self.B*5)
 
-        # Calculate the IoU for the bbox1 & bbox2 and get the best box for each grid cell (bestbox) and the IoU value (iou_maxes).
+        # Calculate the IoU for the bbox1 & bbox2 and get the best box for each grid cell (best_box) and the IoU value (iou_maxes).
         iou_b1 = intersection_over_union(predictions[..., 21:25], target[..., 21:25])
         iou_b2 = intersection_over_union(predictions[..., 26:30], target[..., 21:25])
         ious = torch.cat([iou_b1.unsqueeze(0), iou_b2.unsqueeze(0)], dim=0)
-        iou_maxes, bestbox = torch.max(ious, dim=0)
+        iou_maxes, best_box = torch.max(ious, dim=0)
         exists_box = target[..., 20].unsqueeze(3)     # Iobj_i
 
 
@@ -34,8 +34,8 @@ class YoloLoss(nn.Module):
         '''
         box_predictions = exists_box * (
             (
-                bestbox * predictions[..., 26:30]
-                + (1 - bestbox) * predictions[..., 21:25]
+                best_box * predictions[..., 26:30]
+                + (1 - best_box) * predictions[..., 21:25]
             )
         )
 
@@ -54,7 +54,7 @@ class YoloLoss(nn.Module):
         The Objectness is the confidence score of the bounding box containing an object.
         '''
 
-        pred_box = (bestbox * predictions[..., 25:26] + (1 - bestbox) * predictions[..., 20:21])
+        pred_box = (best_box * predictions[..., 25:26] + (1 - best_box) * predictions[..., 20:21])
         object_loss = self.mse(torch.flatten(exists_box * pred_box), 
                             torch.flatten(exists_box * target[..., 20:21]))
         
