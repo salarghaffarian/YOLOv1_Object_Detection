@@ -161,4 +161,7 @@ cython_debug/
 
 # Dataset folder
 data/
-
+/data/*
+/data/*/*
+/data/*.jpg
+/data/*.csv
