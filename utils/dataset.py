@@ -93,10 +93,10 @@ class Yolov1Dataset(Dataset):
 
                     # In the label matrix, which is 
                     if label_matrix[i, j, self.C] == 0:                    # if (self.C = 20)This is the 20th index of the label matrix. If it is 0, then it means that there is no object in the cell & and if it is 1, then it means that there is an object in the cell.
-                        label_matrix[i, j, self.C] = 1
-                        box_coordinates = torch.tensor([x_cell, y_cell, width_cell, height_cell])
-                        label_matrix[i, j, self.C+1:self.C+5] = box_coordinates   # Note that the tensor values from 0 to 19 including 19 are the class labels. The tensor of 20 is the objectness score. The tensor values from 21 to 25 are the bounding box coordinates.
-                        label_matrix[i, j, class_label] = 1
+                        label_matrix[i, j, self.C] = 1      # for the objectness score
+                        box_coordinates = torch.tensor([x_cell, y_cell, width_cell, height_cell])   
+                        label_matrix[i, j, self.C+1:self.C+5] = box_coordinates   # for the bounding box coordinates
+                        label_matrix[i, j, class_label] = 1   # for the class labels (one-hot encoding)
                    
                 return image, label_matrix
 
