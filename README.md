@@ -29,7 +29,7 @@ This Repository contains all the code and information you need to train, test, a
 
 ### Original Paper:
 
-[YOLOv1 paper](https://arxiv.org/abs/1506.02640)
+[YOLOv1 paper](https://arxiv.org/pdf/1506.02640.pdf)
 ### Model Architecture:
 
 
