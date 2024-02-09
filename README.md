@@ -1,8 +1,7 @@
 # YOLOv1_Object_Detection
 This Repository contains all the code and information you need to train, test, and deploy YOLOv1 Object Detection Model.
 
-YouTube channels rate on describing YOLOv1:
-
+### YouTube channels rate on describing YOLOv1:
 
 <!-- YouTube Link 1 -->
 <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -28,6 +27,10 @@ YouTube channels rate on describing YOLOv1:
   </div>
 </div>
 
+### Original Paper:
+
+[YOLOv1 paper](https://arxiv.org/abs/1506.02640)
+### Model Architecture:
 
 
 
