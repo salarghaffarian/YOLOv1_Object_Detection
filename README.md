@@ -27,7 +27,7 @@ YouTube channels rate on describing YOLOv1:
 <div style="display: flex; align-items: center;">
   <img src="./resources/youtube_icon.jpg" alt="Icon" width="30" style="margin-bottom: 5px; margin-right: 10px;">
   <a href="https://www.youtube.com/watch?v=zgbPj4lSc58" style="text-decoration: none;">
-    <p style="margin: 0;">ML For Nerds    ★★★★☆</p>
+    <p style="margin: 0;">ML For Nerds    ★★★★★</p>
   </a>
 </div>
 
