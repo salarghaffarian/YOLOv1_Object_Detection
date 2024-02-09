@@ -4,39 +4,33 @@ This Repository contains all the code and information you need to train, test, a
 YouTube channels rate on describing YOLOv1:
 
 
-
 <!-- YouTube Link 1 -->
 <div style="display: flex; align-items: center; justify-content: space-between;">
   <div style="display: flex; align-items: center;">
     <img src="./resources/youtube_icon.jpg" alt="Icon" width="30" style="margin-right: 10px;">
-    <a href="https://www.youtube.com/watch?v=svn9-xV7wjk" style="text-decoration: none;">
-      <p style="margin: 0;">DeepBean</p>
-    </a>
+    <a href="https://www.youtube.com/watch?v=svn9-xV7wjk" style="text-decoration: none;"><span style="margin: 0;">DeepBean</span></a>
   </div>
-  <p style="margin: 0;">★★★★☆</p>
+  <span style="margin: 0;">★★★★☆</span>
 </div>
 
 <!-- YouTube Link 2 -->
 <div style="display: flex; align-items: center; justify-content: space-between;">
   <div style="display: flex; align-items: center;">
     <img src="./resources/youtube_icon.jpg" alt="Icon" width="30" style="margin-right: 10px;">
-    <a href="https://www.youtube.com/watch?v=n9_XyCGr-MI" style="text-decoration: none;">
-      <p style="margin: 0;">Aladdin Persson</p>
-    </a>
+    <a href="https://www.youtube.com/watch?v=n9_XyCGr-MI" style="text-decoration: none;"><span style="margin: 0;">Aladdin Persson</span></a>
   </div>
-  <p style="margin: 0;">★★★★☆</p>
+  <span style="margin: 0;">★★★★☆</span>
 </div>
 
 <!-- YouTube Link 3 -->
 <div style="display: flex; align-items: center; justify-content: space-between;">
   <div style="display: flex; align-items: center;">
     <img src="./resources/youtube_icon.jpg" alt="Icon" width="30" style="margin-right: 10px;">
-    <a href="https://www.youtube.com/watch?v=zgbPj4lSc58" style="text-decoration: none;">
-      <p style="margin: 0;">ML For Nerds</p>
-    </a>
+    <a href="https://www.youtube.com/watch?v=zgbPj4lSc58" style="text-decoration: none;"><span style="margin: 0;">ML For Nerds</span></a>
   </div>
-  <p style="margin: 0;">★★★★★</p>
+  <span style="margin: 0;">★★★★★</span>
 </div>
+
 
 
 
