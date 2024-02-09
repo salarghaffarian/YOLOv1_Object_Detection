@@ -31,6 +31,6 @@ This Repository contains all the code and information you need to train, test, a
 
 [YOLOv1 paper](https://arxiv.org/pdf/1506.02640.pdf)
 ### Model Architecture:
-
+<img src="./resources/YOLOv1_architecture.png" width="700">
 
 
