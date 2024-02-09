@@ -1,7 +1,7 @@
 # YOLOv1_Object_Detection
 This Repository contains all the code and information you need to train, test, and deploy YOLOv1 Object Detection Model.
 
-### YouTube channels rate on describing YOLOv1:
+### YouTube channels for learning YOLOv1:
 
 <!-- YouTube Link 1 -->
 <div style="display: flex; align-items: center; justify-content: space-between;">
