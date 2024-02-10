@@ -72,8 +72,8 @@ class YOLOv1(nn.Module):
             nn.Linear(7 * 7 * 1024, 4096),
             nn.LeakyReLU(0.1),
             nn.Dropout(0.5),
-            nn.Linear(4096, self.S * self.S * (self.B * 5 + self.C))
-            #TODO: adding sigmoid layer here.    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            nn.Linear(4096, self.S * self.S * (self.B * 5 + self.C))    # 4096 -> (7*7*(2*5+20)) = 49*30 = 1470
+            #TODO: adding sigmoid layer here.  ???  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         )
 
     def forward(self, x):
