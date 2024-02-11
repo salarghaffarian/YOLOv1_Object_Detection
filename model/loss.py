@@ -80,7 +80,7 @@ class YoloLoss(nn.Module):
                 + self.lambda_noobj * no_object_loss  # (3) No object loss
                 + class_loss)                         # (4) Class loss
 
-        return loss
+        return loss   
     
         
 
