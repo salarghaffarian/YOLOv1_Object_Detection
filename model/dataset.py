@@ -68,7 +68,7 @@ class Yolov1Dataset(Dataset):
                 boxes = []
                 with open(label_path) as f:
                      for label in f.readlines():
-                            class_label, x, y, width, height =  [float(item) if float(item) != int(item) else int(item) for item in label.split()]    
+                            class_label, x, y, width, height =  [float(i) if float(i)!=int(float(i)) else int(i) for i in label.replace("\n", "").split()]
                             boxes.append([class_label, x, y, width, height])  # Boxes for each txt file are a list of lists including class_label, x, y, width, and height. 
                 
                 boxes = torch.tensor(boxes)   # Converting the list of boxes to a tensor. Depending on the number of objects inside the image, the shape of the tensor will be (n_object, 5)
@@ -92,14 +92,16 @@ class Yolov1Dataset(Dataset):
                     width_cell, height_cell = width * self.S, height * self.S    # The width and height of the object with respect to the cell
 
                     # In the label matrix, which is 
-                    if label_matrix[i, j, self.C] == 0:                    # if (self.C = 20)This is the 20th index of the label matrix. If it is 0, then it means that there is no object in the cell & and if it is 1, then it means that there is an object in the cell.
-                        label_matrix[i, j, self.C] = 1      # for the objectness score
+                    if label_matrix[i, j, self.C] == 0:                    # if (self.C = 20) This is the 20th index of the label matrix. If it is 0, then it means that there is no object in the cell & and if it is 1, then it means that there is an object in the cell.
+                        label_matrix[i, j, self.C] = 1                     # for the objectness score
                         box_coordinates = torch.tensor([x_cell, y_cell, width_cell, height_cell])   
                         label_matrix[i, j, self.C+1:self.C+5] = box_coordinates   # for the bounding box coordinates
                         label_matrix[i, j, class_label] = 1   # for the class labels (one-hot encoding)
                    
-                return image, label_matrix
-
+                return image, label_matrix   # The label matrix size is (S=7, S=7, C+5*B=30) >>> 7x7x30 for now. #!!!
+                
+                #TODO: consider the size of label_matrix in the Dataset and Dataloader classes and the loss function for validate its size to be (7, 7, 30) instead of (7, 7, 25)
+            
                          
 
 
