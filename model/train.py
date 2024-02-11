@@ -86,7 +86,7 @@ def main():
                      )
 
     # (3) Instantiate the YOLOv1 model
-    model = YOLOv1(split_size=S, num_classes=C, num_boxes=B).to(DEVICE)
+    model = YOLOv1(split_size=S, num_classes=C, num_bboxes=B).to(DEVICE)
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
     loss_func = YoloLoss(S=7, B=2, C=20).to(DEVICE)
 
@@ -94,11 +94,11 @@ def main():
         load_checkpoint(torch.load(LOAD_MODEL_FILE), model, optimizer)
 
     train_dataset = Yolov1Dataset(
-        "data/labels/train.csv", img_dir=IMG_DIR, label_dir=LABEL_DIR, transform=transform
+        "data/train.csv", img_dir=IMG_DIR, label_dir=LABEL_DIR, transform=transform
     )
 
     test_dataset = Yolov1Dataset(
-        "data/labels/test.csv", img_dir=IMG_DIR, label_dir=LABEL_DIR, transform=transform
+        "data/test.csv", img_dir=IMG_DIR, label_dir=LABEL_DIR, transform=transform
     )
 
     train_loader = DataLoader(
