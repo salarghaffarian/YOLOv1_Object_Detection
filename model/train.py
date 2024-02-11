@@ -18,7 +18,7 @@ from utils import (
     load_checkpoint,
 )
 
-from loss import YoloLossss
+from loss import YoloLoss
 
 seed = 123
 torch.manual_seed(seed)
